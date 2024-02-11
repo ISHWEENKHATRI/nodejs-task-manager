@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg border-bottom py-4 bg-body-tertiary">
+    <div class="container-fluid">
+  <a class="navbar-brand" href="/">
+      <img src="{{data.brandIconUrl}}" alt="Bootstrap">
+      {{data.brandName}}
+  </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          
+          {{#each data.links}}
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{this.url}}">{{this.label}}</a>
+          </li>
+          {{/each}}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{data.dropdownLabel}}
+            </a> 
+            <ul class="dropdown-menu">
+              {{#each data.dropdown}}
+              <li><a class="dropdown-item" href="{{this.url}}">{{this.label}}</a></li>
+              {{/each}}
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
